@@ -24,7 +24,19 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <ThemeProvider>
-        <Stack screenOptions={{ headerShown: false }} />
+        <Stack screenOptions={{ headerShown: false }}>
+          {/* Entry gate — checks onboarding state */}
+          <Stack.Screen name="index" options={{ animation: 'none' }} />
+
+          {/* Splash → fades into onboarding */}
+          <Stack.Screen name="splash" options={{ animation: 'none' }} />
+
+          {/* Onboarding flow */}
+          <Stack.Screen name="onboarding" options={{ animation: 'fade' }} />
+
+          {/* Main app tabs */}
+          <Stack.Screen name="(tabs)" options={{ animation: 'fade' }} />
+        </Stack>
         <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
       </ThemeProvider>
     </SafeAreaProvider>
