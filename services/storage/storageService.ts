@@ -26,6 +26,12 @@ export const STORAGE_KEYS = {
   USER_PREFERENCES: '@hangul_tracker/user_preferences',
   /** Which lessons / vocabulary sets have been unlocked */
   UNLOCKED_CONTENT: '@hangul_tracker/unlocked_content',
+  /** Whether the user has completed the onboarding flow */
+  ONBOARDING_COMPLETE: '@hangul_tracker/onboarding_complete',
+  /** Set of lesson ids the user has marked as mastered */
+  MASTERED_LESSONS: '@hangul_tracker/mastered_lessons',
+  /** Map of vocabularyItem id → familiarity score (0–5) */
+  FLASHCARD_FAMILIARITY: '@hangul_tracker/flashcard_familiarity',
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];
